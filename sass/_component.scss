@@ -171,3 +171,112 @@
   padding: 2.4rem;
   color: var(--color-grey-light-4);
 }
+///
+/// gallery
+.gallery {
+  display: flex;
+
+  &__item {
+  }
+  &__photo {
+    width: 100%;
+    //to avoid the small underneath space with the default setting of display:inline
+    display: block;
+  }
+}
+///
+///overview
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.2rem solid var(--color-grey-light-2);
+  &__heading {
+    margin-left: 2rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+  &__stars {
+    //flex: 1;
+    //creating some space using margin auto
+    margin-right: auto;
+    display: flex;
+  }
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    justify-items: center;
+  }
+  &__icon-location {
+    margin-right: 0.5rem;
+  }
+  &__rating {
+    background-color: var(--color-primary-light);
+    margin-left: 3rem;
+    color: #fff;
+    text-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    padding: 0rem 2rem;
+  }
+  &__rating-average {
+    font-size: 2.25rem;
+    margin-bottom: -0.5rem;
+  }
+  &__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+///
+/// button inline
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding: 0.2rem;
+  display: inline-block;
+  //transparent for both the location and "show all" button
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+    font-size: larger;
+  }
+  &:focus {
+    outline: none;
+    //call the customized animation  by animation: name time time function
+    animation: pulsate 1s infinite;
+  }
+}
+//build a n animation named pulsate
+//set the different state (0% 50% 100% of th time) of the animation
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    //x axis move,y axis move, blur, color
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
