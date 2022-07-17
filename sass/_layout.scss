@@ -19,11 +19,16 @@
   display: flex;
 }
 .sidebar {
+  display: flex;
+  //change the direction of the main axis
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--color-grey-dark-1);
   flex: 0 0 20%;
 }
 .hotel-view {
+  //for test
   background-color: rgb(115, 104, 104);
-  //flex:0 0 80%;
+  height: 80rem;
   flex: 1;
 }
