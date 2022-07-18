@@ -10,7 +10,7 @@
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --color-shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  --color-shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.06);
+  --color-shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.08);
   --line: 0.2rem solid var(--color-grey-light-2); }
 
 * {
@@ -67,13 +67,13 @@ body {
   flex: 1; }
 
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-3);
   border-bottom: var(--line); }
 
 .description {
-  font-size: 1.4rem;
   background-color: #fff;
   box-shadow: var(--color-shadow-light);
   padding: 3rem;
@@ -82,7 +82,9 @@ body {
 
 .user-reviews {
   flex: 1;
-  background-color: red; }
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .logo {
   height: 3.25rem;
@@ -271,10 +273,15 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s; }
+  .btn-inline span {
+    margin-left: 0.3rem;
+    transition: margin-left 0.2s; }
   .btn-inline:hover {
-    color: var(--color-grey-dark-1);
-    font-size: larger; }
+    color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 0.8rem; }
   .btn-inline:focus {
+    font-size: larger;
     outline: none;
     animation: pulsate 1s infinite; }
 
@@ -329,3 +336,47 @@ body {
     margin-right: -1.2rem; }
   .recommend__count {
     margin-right: auto; }
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--color-shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden; }
+  .review__text {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1.5rem; }
+  .review__user {
+    display: flex;
+    align-items: center; }
+  .review__user-photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-right: 1.5rem; }
+  .review__user-box {
+    margin-right: auto; }
+  .review__user-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem; }
+  .review__user-date {
+    color: var(--color-grey-dark-3);
+    font-size: 1rem; }
+  .review__rating {
+    font-weight: 200;
+    font-size: 2rem;
+    color: var(--color-primary-dark); }
+  .review::before {
+    content: "\201C";
+    position: absolute;
+    top: -1.5rem;
+    left: -0.5rem;
+    font-size: 18rem;
+    color: var(--color-grey-light-2);
+    font-family: serif;
+    line-height: 1;
+    z-index: 1; }

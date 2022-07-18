@@ -99,6 +99,7 @@
 
             <main class="hotel-view">
                 <div class="gallery">
+                    <!-- use figure to contain img for adding caption for the photo -->
                     <figure class="gallery__item">
                         <img src="img/hotel-1.jpg" alt="Photo of hotel 1" class="gallery__photo">
                     </figure>
@@ -147,8 +148,8 @@
                 <div class="detail">
                     <div class="description">
                         <p class="paragraph">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Animi nisi dignissimos debitis ratione sapiente saepe. 
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Animi nisi dignissimos debitis ratione sapiente saepe.
                             Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.
                         </p>
                         <p class="paragraph">
@@ -177,9 +178,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="user-reviews">
-                        User reviews
-                    </div>
+                    <figure class="user-reviews">
+                        <figure class="review">
+                            <blockquote class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                            </blockquote>
+                            <figcaption class="review__user">
+                                <img src="img/user-5.jpg" alt="user 1" class="review__user-photo">
+                                <div class="review__user-box">
+                                    <p class="review__user-name">Chad Murray</p>
+                                    <p class="review__user-date">Jun 15th, 2022</p>
+                                </div>
+                                <div class="review__rating">8.1</div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="review">
+                            <blockquote class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                            </blockquote>
+                            <figcaption class="review__user">
+                                <img src="img/user-6.jpg" alt="user 2" class="review__user-photo">
+                                <div class="review__user-box">
+                                    <p class="review__user-name">Jane Smith</p>
+                                    <p class="review__user-date">Feb 31th, 2022</p>
+                                </div>
+                                <div class="review__rating">7.4</div>
+                            </figcaption>
+                        </figure>
+                        <!-- -> &rarr; -->
+                        <button class="btn-inline">Show all <span>&rarr;</span></buttun>
+                    </figure>
                 </div>
             </main>
         </div>

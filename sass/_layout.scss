@@ -30,13 +30,14 @@
   flex: 1;
 }
 .detail {
+  //.description & .review inherit the font-size
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-3);
   border-bottom: var(--line);
 }
 .description {
-  font-size: 1.4rem;
   background-color: #fff;
   box-shadow: var(--color-shadow-light);
   padding: 3rem;
@@ -45,5 +46,7 @@
 }
 .user-reviews {
   flex: 1;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
