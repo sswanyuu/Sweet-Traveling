@@ -10,7 +10,8 @@
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --color-shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  --color-shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.06); }
+  --color-shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.06);
+  --line: 0.2rem solid var(--color-grey-light-2); }
 
 * {
   margin: 0;
@@ -40,7 +41,7 @@ body {
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--color-shadow-dark);
-  height: 100vh; }
+  min-height: 50rem; }
 
 .header {
   color: var(--color-grey-dark-2);
@@ -50,7 +51,7 @@ body {
   align-items: center;
   height: 7rem;
   background-color: #fff;
-  border-bottom: 0.2rem solid var(--color-grey-light-2); }
+  border-bottom: var(--line); }
 
 .content {
   display: flex; }
@@ -63,8 +64,25 @@ body {
   flex: 0 0 20%; }
 
 .hotel-view {
-  height: 80rem;
   flex: 1; }
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-3);
+  border-bottom: var(--line); }
+
+.description {
+  font-size: 1.4rem;
+  background-color: #fff;
+  box-shadow: var(--color-shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem; }
+
+.user-reviews {
+  flex: 1;
+  background-color: red; }
 
 .logo {
   height: 3.25rem;
@@ -204,7 +222,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 0.2rem solid var(--color-grey-light-2); }
+  border-bottom: var(--line); }
   .overview__heading {
     margin-left: 2rem;
     font-size: 2.5rem;
@@ -270,3 +288,44 @@ body {
   100% {
     transform: scale(1);
     box-shadow: none; } }
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+.list {
+  margin: 3rem 0;
+  list-style: none;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem; }
+  .list__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+    background-color: var(--color-primary);
+    mask-image: url(../img/SVG/chevron-thin-right.svg);
+    mask-size: cover;
+    -webkit-mask-image: url(../img/SVG/chevron-thin-right.svg);
+    -webkit-mask-size: cover; }
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-2);
+  display: flex;
+  align-items: center; }
+  .recommend__user-photo {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 0.2rem solid #fff; }
+  .recommend__user-photo:not(:last-child) {
+    margin-right: -1.2rem; }
+  .recommend__count {
+    margin-right: auto; }
