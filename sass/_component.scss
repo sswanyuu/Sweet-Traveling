@@ -179,7 +179,7 @@
   &__item {
   }
   &__photo {
-    width: 100%;
+    width: 320px;
     //to avoid the small underneath space with the default setting of display:inline
     display: block;
   }
@@ -219,7 +219,7 @@
     margin-right: 0.5rem;
   }
   &__rating {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary-dark);
     margin-left: 3rem;
     color: #fff;
     text-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
@@ -244,9 +244,10 @@
 .btn-inline {
   border: none;
   color: var(--color-primary);
-  font-size: inherit;
+  font-size: 1.5rem;
   border-bottom: 1px solid currentColor;
-  padding: 0.2rem;
+  padding: 0.1rem;
+  margin-bottom: rem;
   display: inline-block;
   //transparent for both the location and "show all" button
   background-color: transparent;
@@ -263,7 +264,6 @@
     }
   }
   &:focus {
-    font-size: larger;
     outline: none;
     //call the customized animation  by animation: name time time function
     animation: pulsate 1s infinite;
@@ -296,7 +296,7 @@
 ///
 /// list
 .list {
-  margin: 3rem 0;
+  margin: 4rem 0;
   list-style: none;
   padding: 3rem 0;
   border-top: var(--line);
@@ -307,7 +307,7 @@
   //every items occupy 50% of each line
   &__item {
     flex: 0 0 50%;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
     //put the icon before the item by using the file as background image.
   }
   &__item::before {
@@ -355,9 +355,9 @@
   background-color: #fff;
   box-shadow: var(--color-shadow-light);
   padding: 3rem;
-  margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+  margin-bottom: 3.5rem;
 
   &__text {
     //to use z-index, position is needed
@@ -405,5 +405,69 @@
     font-family: serif;
     line-height: 1;
     z-index: 1;
+  }
+}
+///
+/// call to action
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+.btn {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  box-shadow: var(--color-shadow-light);
+  position: relative;
+  //let the ouside part hidden
+  overflow: hidden;
+  cursor: pointer;
+  & > * {
+    display: inline-block;
+    //let it has the same height and width of the parent
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s;
+  }
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+  &__invisible {
+    padding: 2rem 0rem;
+    //put the invisible ouside the button
+    position: absolute;
+    left: 0;
+    top: -100%;
+  }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+  &:hover &__invisible {
+    top: 0;
+  }
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary),
+      var(--color-primary-dark)
+    );
+  }
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
   }
 }

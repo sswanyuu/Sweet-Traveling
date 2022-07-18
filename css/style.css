@@ -1,7 +1,7 @@
 :root {
-  --color-primary: #eb2f64;
-  --color-primary-light: #f790a9;
-  --color-primary-dark: #ba265d;
+  --color-primary: #d7ad7b;
+  --color-primary-light: #ecd5b6;
+  --color-primary-dark: #b69975;
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
   --color-grey-light-3: #f0eeee;
@@ -10,7 +10,7 @@
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --color-shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  --color-shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.08);
+  --color-shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.06);
   --line: 0.2rem solid var(--color-grey-light-2); }
 
 * {
@@ -218,7 +218,7 @@ body {
 .gallery {
   display: flex; }
   .gallery__photo {
-    width: 100%;
+    width: 320px;
     display: block; }
 
 .overview {
@@ -246,7 +246,7 @@ body {
   .overview__icon-location {
     margin-right: 0.5rem; }
   .overview__rating {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary-dark);
     margin-left: 3rem;
     color: #fff;
     text-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
@@ -266,9 +266,10 @@ body {
 .btn-inline {
   border: none;
   color: var(--color-primary);
-  font-size: inherit;
+  font-size: 1.5rem;
   border-bottom: 1px solid currentColor;
-  padding: 0.2rem;
+  padding: 0.1rem;
+  margin-bottom: rem;
   display: inline-block;
   background-color: transparent;
   cursor: pointer;
@@ -281,7 +282,6 @@ body {
     .btn-inline:hover span {
       margin-left: 0.8rem; }
   .btn-inline:focus {
-    font-size: larger;
     outline: none;
     animation: pulsate 1s infinite; }
 
@@ -300,7 +300,7 @@ body {
   margin-bottom: 2rem; }
 
 .list {
-  margin: 3rem 0;
+  margin: 4rem 0;
   list-style: none;
   padding: 3rem 0;
   border-top: var(--line);
@@ -309,7 +309,7 @@ body {
   flex-wrap: wrap; }
   .list__item {
     flex: 0 0 50%;
-    margin-bottom: 0.7rem; }
+    margin-bottom: 0.8rem; }
   .list__item::before {
     content: "";
     display: inline-block;
@@ -341,9 +341,9 @@ body {
   background-color: #fff;
   box-shadow: var(--color-shadow-light);
   padding: 3rem;
-  margin-bottom: 3.5rem;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 3.5rem; }
   .review__text {
     position: relative;
     z-index: 2;
@@ -380,3 +380,46 @@ body {
     font-family: serif;
     line-height: 1;
     z-index: 1; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+
+.btn {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  border: none;
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  box-shadow: var(--color-shadow-light);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s; }
+  .btn__visible {
+    padding: 2rem 7.5rem; }
+  .btn__invisible {
+    padding: 2rem 0rem;
+    position: absolute;
+    left: 0;
+    top: -100%; }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary), var(--color-primary-dark)); }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
