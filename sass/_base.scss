@@ -15,6 +15,15 @@
   --color-shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.06);
   --line: 0.2rem solid var(--color-grey-light-2);
 }
+
+///sass var
+///css var can not be used in @media
+$bp-largest: 75em; /// 1200px = 75em
+$bp-large: 68.75em;
+$bp-medium: 60em;
+$bp-small: 43.75em;
+$bp-smaller: 31.25em;
+$bp-smallest: 27.5em;
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +35,10 @@
 }
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; //1rem = 10px
+  @media only screen and(max-width:$bp-large) {
+    font-size: 50%; //1rem = 8 px
+  }
 }
 body {
   font-family: "Open Sans", sans-serif;

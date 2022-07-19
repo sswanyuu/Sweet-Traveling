@@ -9,6 +9,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and(max-width:$bp-smaller) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -24,7 +29,9 @@
     &:focus {
       outline: none;
       width: 100%;
-      background-color: var(--color-grey-light-3);
+      @media only screen and(max-width:$bp-smaller) {
+        width: 90%;
+      }
     }
     //change placeholder's font-size & color
     &::-webkit-input-placeholder {
@@ -111,12 +118,26 @@
   margin-top: 3.5rem;
   display: flex;
   flex-direction: column;
-
+  @media only screen and(max-width:$bp-medium) {
+    margin-top: 0;
+    flex-direction: row;
+    align-items: center;
+  }
   &__item {
     position: relative;
     //use :not(:last-child) to exclude the last child
+    @media only screen and(max-width:$bp-medium) {
+      flex: 1;
+      text-align: center;
+    }
+    @media only screen and(max-width:$bp-smallest) {
+      height: 10rem;
+    }
     &:not(:last-child) {
       margin-bottom: 0.8rem;
+      @media only screen and(max-width:$bp-medium) {
+        margin: 0;
+      }
     }
   }
   &__item::before {
@@ -137,6 +158,7 @@
     transform-origin: center;
   }
   &__item:hover::before,
+  //the first one is active
   &__item--active::before {
     transform: scaleY(1);
     width: 100%;
@@ -144,8 +166,9 @@
   &__item:active::before {
     background-color: var(--color-primary-light);
   }
+
   &__link,
-  &__:visited {
+  &__link:visited {
     color: var(--color-grey-light-1);
     text-decoration: none;
     text-transform: uppercase;
@@ -154,12 +177,28 @@
     align-items: center;
     position: relative;
     z-index: 1;
+
+    @media only screen and(max-width:$bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    @media only screen and(max-width:$bp-small) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
+
   &__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+    @media only screen and(max-width:$bp-small) {
+      margin-right: 0rem;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -170,6 +209,9 @@
   text-align: center;
   padding: 2.4rem;
   color: var(--color-grey-light-4);
+  @media only screen and(max-width:$bp-medium) {
+    display: none;
+  }
 }
 ///
 /// gallery
@@ -179,7 +221,7 @@
   &__item {
   }
   &__photo {
-    width: 320px;
+    width: 100%;
     //to avoid the small underneath space with the default setting of display:inline
     display: block;
   }
@@ -197,6 +239,15 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+    @media only screen and(max-width:$bp-small) {
+      font-size: 2.4rem;
+      margin-left: 1rem;
+      padding: 1rem 1rem;
+      @media only screen and(max-width:$bp-smallest) {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+    }
   }
   &__stars {
     //flex: 1;
@@ -214,6 +265,10 @@
     font-size: 1.2rem;
     display: flex;
     justify-items: center;
+    align-items: center;
+    @media only screen and(max-width:$bp-small) {
+      flex-direction: column;
+    }
   }
   &__icon-location {
     margin-right: 0.5rem;
@@ -222,21 +277,28 @@
     background-color: var(--color-primary-dark);
     margin-left: 3rem;
     color: #fff;
-    text-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-self: stretch;
     padding: 0rem 2rem;
+    align-self: stretch;
   }
   &__rating-average {
+    text-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
     font-size: 2.25rem;
     margin-bottom: -0.5rem;
+    @media only screen and(max-width:$bp-small) {
+      font-size: 1.7rem;
+      margin-bottom: 0;
+    }
   }
   &__rating-count {
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    line-height: 1;
+    font-size: 1.4rem;
+    @media only screen and(max-width:$bp-smallest) {
+      display: none;
+    }
   }
 }
 ///
@@ -305,6 +367,11 @@
   //allow the items to change line
   flex-wrap: wrap;
   //every items occupy 50% of each line
+  @media only screen and(max-width:$bp-large) {
+    font-size: 50%; //1rem = 8 px
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
   &__item {
     flex: 0 0 50%;
     margin-bottom: 0.8rem;
@@ -334,7 +401,10 @@
   color: var(--color-grey-dark-2);
   display: flex;
   align-items: center;
-
+  &__friends {
+    //let these photos stay side by side all the time
+    display: flex;
+  }
   &__user-photo {
     //let the border outside the image
     height: 3rem;
@@ -358,6 +428,10 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 3.5rem;
+  @media only screen and(max-width:$bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     //to use z-index, position is needed
@@ -417,6 +491,10 @@
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+    @media only screen and(max-width:$bp-medium) {
+      padding: 2.5rem 0;
+      margin-bottom: 2rem;
+    }
   }
 }
 .btn {
