@@ -1,12 +1,20 @@
-# Sweet-Traveling
-<h2>An all-in-one traveling application written with SASS</h2>
-<p>As a girl who love traveling a lot. A beautiful traveling application with nice UI is very important for me. This idea inspired me to follow the instruction of Jonas Schmedtmann to build this app.</p>
-<h3>This application is</h3>
-<ul>
+# 🌍 Sweet-Traveling - A Beautiful Travel Companion
 
-<li>Using flexbox to arrange the elements</li>
-<li>Adding nice animation to improve the inteaction of the website</li>
-</ul>
+An elegant all-in-one travel application designed with SASS, featuring a stunning UI, smooth animations, and a well-structured layout. Inspired by my passion for travel, I built this project following Jonas Schmedtmann's guidance to create an immersive and user-friendly experience.
+
+### ✨ Key Features:
+
+✅ Modern & Responsive Design – Styled with SASS for a sleek and cohesive look.
+
+✅ Flexbox Layout – Ensures a well-structured, adaptable, and visually appealing arrangement of elements.
+
+✅ Smooth Animations – Enhances user interaction and engagement.
+
+✅ Optimized for Travel Lovers – Aesthetic and intuitive design to make trip planning effortless.
+
+
+This project showcases my frontend development skills, particularly in CSS architecture, UI/UX design, and animation techniques.
+
 <h3>Desktop</h3>
 <img width="877" alt="desktop" src="https://user-images.githubusercontent.com/105194783/186995112-1e66bf14-3e18-4c24-b3d0-d0bff6103bd0.png">
 <h3>Mobile</h3>
