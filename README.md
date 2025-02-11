@@ -20,6 +20,7 @@ This project showcases my frontend development skills, particularly in CSS archi
 <h3>Mobile</h3>
 <img width="400" alt="mobile" src="https://github.com/user-attachments/assets/7f8a80bc-6f77-4c23-a50b-4bf5f52b6e21">
 <h3>Demo Video</h3>
+
 https://github.com/user-attachments/assets/19588686-a6ff-4deb-8ae9-ecff8298e8af
 
 
